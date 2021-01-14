@@ -9,12 +9,14 @@ namespace Hokemon_Challenge.Pokemon.Impl {
         private EPokemonTypes type;
         private Dictionary<PokeStats, int> stats;
         private int cp;
+        private EPokemonRarity rarity;
 
-        public AbstractPokemon(string name, EPokemonTypes type, int cp, Dictionary<PokeStats, int> stats) {
+        public AbstractPokemon(string name, EPokemonTypes type, int cp, Dictionary<PokeStats, int> stats, EPokemonRarity rarity) {
             this.name = name;
             this.type = type;
             this.cp = cp;
             this.stats = stats;
+            this.rarity = rarity;
         }
 
         public void setType(EPokemonTypes type) {
@@ -47,6 +49,14 @@ namespace Hokemon_Challenge.Pokemon.Impl {
 
         public int GetStatAmount(PokeStats stat) {
             return stats[stat];
+        }
+        
+        public void SetRarity(EPokemonRarity rarity) {
+            this.rarity = rarity;
+        }
+
+        public EPokemonRarity GetRarity() {
+            return rarity;
         }
         
     }
