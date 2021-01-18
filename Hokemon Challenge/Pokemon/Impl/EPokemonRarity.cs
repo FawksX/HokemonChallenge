@@ -1,7 +1,8 @@
 namespace Hokemon_Challenge.Pokemon.Impl {
     public enum EPokemonRarity {
-        Normal,
-        Shiny,
-        Legend
+        None = 0,
+        Normal = 1,
+        Shiny = 2,
+        Legend = 3
     }
 }

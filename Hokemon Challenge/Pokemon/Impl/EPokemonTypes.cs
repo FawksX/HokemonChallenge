@@ -2,6 +2,7 @@ namespace Hokemon_Challenge.Pokemon.Impl {
     
     public enum EPokemonTypes {
 
+        None = 0,
         Normal,
         Fire,
         Water,

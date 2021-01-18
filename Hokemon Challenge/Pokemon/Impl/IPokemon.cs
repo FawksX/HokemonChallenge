@@ -2,8 +2,9 @@ namespace Hokemon_Challenge.Pokemon.Impl {
     
     public interface IPokemon {
 
-        void setType(EPokemonTypes type);
-        void setStat(PokeStats stat, int amount);
+        void SetType(EPokemonTypes type);
+        void SetIV(PokeStats stat, int amount);
+        void SetEV(PokeStats stat, int amount);
         
         void SetName(string newName);
         void SetCP(int newCp);
@@ -12,7 +13,8 @@ namespace Hokemon_Challenge.Pokemon.Impl {
         int GetCP();
         
         EPokemonTypes GetType();
-        int GetStatAmount(PokeStats stat);
+        int GetIV(PokeStats stat);
+        int GetEV(PokeStats stat);
 
     }
 }
