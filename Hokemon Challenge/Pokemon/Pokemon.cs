@@ -1,16 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Hokemon_Challenge.Pokemon.Impl;
+using HokemonChallenge.Pokemon.Impl;
 
-namespace Hokemon_Challenge.Pokemon {
+namespace HokemonChallenge.Pokemon {
     
     public class Pokemon : AbstractPokemon {
 
-        private EPokemonRarity rarity;
-        
-        public Pokemon(string name, EPokemonTypes type, int cp, Dictionary<PokeStats, int> ev, Dictionary<PokeStats, int> iv, EPokemonRarity rarity) :
-            base(name, type, cp, ev, iv, rarity) {
+        public Pokemon(string name, EPokemonTypes type, int cp, Dictionary<PokeStats, int> ev, Dictionary<PokeStats, int> iv, EPokemonRarity rarity, EPokemonTeams team) :
+            base(name, type, cp, ev, iv, rarity, team) {
         }
 
         public static PokeBuilder Builder() {
@@ -25,6 +22,7 @@ namespace Hokemon_Challenge.Pokemon {
             private Dictionary<PokeStats, int> ev;
             private Dictionary<PokeStats, int> iv;
             private EPokemonRarity rarity;
+            private EPokemonTeams team;
 
             public PokeBuilder Name(string name) {
                 this.name = name;
@@ -56,9 +54,14 @@ namespace Hokemon_Challenge.Pokemon {
                 return this;
             }
 
+            public PokeBuilder Team(EPokemonTeams team) {
+                this.team = team;
+                return this;
+            }
+
             public Pokemon Build() {
                 return new Pokemon(
-                    name, type, cp, ev, iv, rarity);
+                    name, type, cp, ev, iv, rarity, team);
             }
 
         }

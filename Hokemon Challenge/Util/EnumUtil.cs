@@ -1,7 +1,7 @@
 using System;
-using Hokemon_Challenge.Pokemon.Impl;
+using HokemonChallenge.Pokemon.Impl;
 
-namespace Hokemon_Challenge.Util {
+namespace HokemonChallenge.Util {
     public static class EnumUtil {
 
         public static T GetEnumValue<T>(string input) where T : struct, IComparable {

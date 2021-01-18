@@ -1,6 +1,6 @@
 using System;
 
-namespace Hokemon_Challenge.Util {
+namespace HokemonChallenge.Util {
     
     public class MessageUtil {
 

@@ -1,4 +1,4 @@
-namespace Hokemon_Challenge.Pokemon.Impl {
+namespace HokemonChallenge.Pokemon.Impl {
     
     public interface IPokemon {
 
@@ -15,6 +15,9 @@ namespace Hokemon_Challenge.Pokemon.Impl {
         EPokemonTypes GetType();
         int GetIV(PokeStats stat);
         int GetEV(PokeStats stat);
+
+        EPokemonTeams GetTeam();
+        void SetPokemonTeams(EPokemonTeams team);
 
     }
 }

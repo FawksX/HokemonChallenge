@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Hokemon_Challenge.Pokemon.Impl;
-using Hokemon_Challenge.Util;
+using HokemonChallenge.Pokemon.Impl;
+using HokemonChallenge.Util;
 
-namespace Hokemon_Challenge {
+namespace HokemonChallenge {
     
     class Program {
         

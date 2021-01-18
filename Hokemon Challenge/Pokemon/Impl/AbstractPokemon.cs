@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Hokemon_Challenge.Pokemon.Impl {
+namespace HokemonChallenge.Pokemon.Impl {
 
 
     public abstract class AbstractPokemon : IPokemon {
@@ -11,14 +11,22 @@ namespace Hokemon_Challenge.Pokemon.Impl {
         private Dictionary<PokeStats, int> iv;
         private int cp;
         private EPokemonRarity rarity;
+        private EPokemonTeams team;
 
-        public AbstractPokemon(string name, EPokemonTypes type, int cp, Dictionary<PokeStats, int> ev, Dictionary<PokeStats, int> iv, EPokemonRarity rarity) {
+        public AbstractPokemon(string name, 
+            EPokemonTypes type, 
+            int cp, 
+            Dictionary<PokeStats, int> ev, 
+            Dictionary<PokeStats, int> iv, 
+            EPokemonRarity rarity, 
+            EPokemonTeams team) {
             this.name = name;
             this.type = type;
             this.cp = cp;
             this.ev = ev;
             this.iv = iv;
             this.rarity = rarity;
+            this.team = team;
         }
 
         public void SetType(EPokemonTypes type) {
@@ -67,6 +75,14 @@ namespace Hokemon_Challenge.Pokemon.Impl {
 
         public EPokemonRarity GetRarity() {
             return rarity;
+        }
+
+        public EPokemonTeams GetTeam() {
+            return team;
+        }
+
+        public void SetPokemonTeams(EPokemonTeams team) {
+            this.team = this.team;
         }
         
     }

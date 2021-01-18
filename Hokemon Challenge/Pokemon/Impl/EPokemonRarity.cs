@@ -1,4 +1,4 @@
-namespace Hokemon_Challenge.Pokemon.Impl {
+namespace HokemonChallenge.Pokemon.Impl {
     public enum EPokemonRarity {
         None = 0,
         Normal = 1,

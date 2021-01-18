@@ -1,4 +1,4 @@
-namespace Hokemon_Challenge.Pokemon.Impl {
+namespace HokemonChallenge.Pokemon.Impl {
     
     public enum PokeStats {
         
