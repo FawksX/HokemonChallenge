@@ -9,12 +9,22 @@ namespace HokemonChallenge {
     class Program {
         
         public static void Main(string[] args) {
+            
+            Dictionary<string, Pokemon.Pokemon> definedPokemon = new Dictionary<string, Pokemon.Pokemon>();
 
-            Pokemon.Pokemon pokemon = CreatePokemon();
+            while (true) {
+                string keepMaking = MessageUtil.getInput("Do you want to continue making pokemon? (yes/no): ").ToString();
+                if (keepMaking.ToLower().Equals("yes")) {
+                    Pokemon.Pokemon newPoke = CreatePokemon();
 
-            Console.WriteLine(pokemon.GetName());
-            Console.WriteLine(pokemon.GetRarity());
-            Console.WriteLine(pokemon.GetCP());
+                    MessageUtil.Msg("Pokemon Created!");
+                    DisplayPoke(newPoke);
+                }
+                if (keepMaking.ToLower().Equals("no")) {
+                    MessageUtil.Msg("No more pokemon will be made!");
+                    return;
+                }
+            }
 
         }
         
@@ -49,6 +59,9 @@ namespace HokemonChallenge {
             MessageUtil.Msg("EVs");
             MessageUtil.MsgSpacer();
             Dictionary<PokeStats, int> ev = GenerateStats();
+            
+            string tempTeam = (string) MessageUtil.getInput("Team (instinct/valor/mystic): ");
+            EPokemonTeams team = EnumUtil.GetEnumValue<EPokemonTeams>(tempTeam);
 
             Pokemon.Pokemon pokemon = Pokemon.Pokemon.Builder()
                 .Name(name)
@@ -56,6 +69,7 @@ namespace HokemonChallenge {
                 .Type(type)
                 .CP(cp)
                 .IV(iv).EV(ev)
+                .Team(team)
                 .Build();
 
             return pokemon;
@@ -78,6 +92,39 @@ namespace HokemonChallenge {
             stats.Add(PokeStats.SpecialDefense, sdefense);
             
             return stats;
+        }
+
+        public static void DisplayPoke(Pokemon.Pokemon pokemon) {
+            MessageUtil.MsgSpacer();
+            MessageUtil.Msg("HOKEMON: " + pokemon.GetName());
+            MessageUtil.Msg("Rarity: " + pokemon.GetRarity());
+            MessageUtil.Msg("Type: " + pokemon.GetType());
+            MessageUtil.Msg("Team: " + pokemon.GetTeam());
+            MessageUtil.Msg("CP: " + pokemon.GetCP());
+            
+            MessageUtil.MsgSpacer();
+            Console.WriteLine("EVs");
+            MessageUtil.MsgSpacer();
+            
+            DisplayStats(pokemon.GetEVRaw());
+            
+            
+            MessageUtil.MsgSpacer();
+            Console.WriteLine("IVs");
+            MessageUtil.MsgSpacer();
+            
+            DisplayStats(pokemon.GetIVRaw());
+            
+            
+        }
+
+        public static void DisplayStats(Dictionary<PokeStats, int> stat) {
+            
+            MessageUtil.Msg("Defense: " + stat[PokeStats.Attack]);
+            MessageUtil.Msg("Attack: " + stat[PokeStats.Defense]);
+            MessageUtil.Msg("Speed: " + stat[PokeStats.Speed]);
+            MessageUtil.Msg("Special Attack: " + stat[PokeStats.SpecialAttack]);
+            MessageUtil.Msg("Special Defense: " + stat[PokeStats.SpecialDefense]);
         }
         
     }

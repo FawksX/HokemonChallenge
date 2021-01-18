@@ -84,6 +84,14 @@ namespace HokemonChallenge.Pokemon.Impl {
         public void SetPokemonTeams(EPokemonTeams team) {
             this.team = this.team;
         }
+
+        public Dictionary<PokeStats, int> GetIVRaw() {
+            return iv;
+        }
+        
+        public Dictionary<PokeStats, int> GetEVRaw() {
+            return ev;
+        }
         
     }
 }
