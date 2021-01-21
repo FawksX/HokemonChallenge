@@ -1,4 +1,6 @@
-﻿using HokemonChallenge.Cache;
+﻿
+using System;
+using HokemonChallenge.Cache;
 using HokemonChallenge.Util;
 
 namespace HokemonChallenge {
@@ -6,25 +8,35 @@ namespace HokemonChallenge {
         public static void Main(string[] args) {
 
             while (true) {
-                string keepMaking = MessageUtil.getInput("Do you want to continue making pokemon? (yes/no): ").ToString();
-                if (keepMaking.ToLower().Equals("yes")) {
-                    Pokemon.Pokemon newPoke = PokeUtil.CreatePokemon();
+                
+                MessageUtil.MsgSpacer();
+                MessageUtil.Msg("MAIN MENU");
+                MessageUtil.MsgSpacer();
+                MessageUtil.Msg("Type create to create a Pokemon");
+                MessageUtil.Msg("Type battle to battle two pokemon");
+                MessageUtil.Msg("Type exit to exit the program");
+                MessageUtil.Msg("");
+                string answer = (string) MessageUtil.getInput("Select: ");
 
-                    MessageUtil.Msg("Pokemon Created!");
-                    PokeUtil.DisplayPoke(newPoke);
-
-                    if (PokeCache.Contains(newPoke.GetName())) {
-                        MessageUtil.Msg("ERROR! Pokemon already exists!");
-                    }
-                    
-                    PokeCache.Add(newPoke.GetName(), newPoke);
-
-                    if (keepMaking.ToLower().Equals("no")) {
-                        MessageUtil.Msg("No more pokemon will be made!");
-                        return;
-                    }
+                if (answer.ToLower().Equals("pokemon")) {
+                    PokeBuilder.open();
                 }
+
+                if (answer.ToLower().Equals("battle")) {
+                    if (PokeCache.get().Count < 2) {
+                        MessageUtil.Msg("ERROR : You need atleast two pokemon in order to battle!");
+                        continue;
+                    }
+                    PokeBattle.open();
+                }
+
+                if (answer.ToLower().Equals("exit")) {
+                    MessageUtil.Msg("Exiting Program!");
+                    return;
+                }
+
             }
+            
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace HokemonChallenge.Cache {
     public class PokeCache {
@@ -15,6 +16,10 @@ namespace HokemonChallenge.Cache {
 
         public static bool Contains(string name) {
             return _POKEMON.ContainsKey(name);
+        }
+
+        public static Dictionary<string, Pokemon.Pokemon> get() {
+            return _POKEMON;
         }
         
 
