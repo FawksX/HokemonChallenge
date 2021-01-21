@@ -25,6 +25,18 @@ namespace HokemonChallenge.Util {
             Console.Write(question);
             return Convert.ToInt32(Console.ReadLine());
         }
+
+        public static void TypewriterMsg(string message) {
+            foreach(char c in message) {
+                Console.Write(c);
+                System.Threading.Thread.Sleep(60);
+            }
+        }
+
+        public static void TypewriterMsg(string message, params string[] args) {
+            string newMsg = String.Format(message, args);
+            TypewriterMsg(newMsg);
+        }
         
         
     }
