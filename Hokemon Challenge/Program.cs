@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using HokemonChallenge.Cache;
+﻿using HokemonChallenge.Cache;
 using HokemonChallenge.Util;
 
 namespace HokemonChallenge {
