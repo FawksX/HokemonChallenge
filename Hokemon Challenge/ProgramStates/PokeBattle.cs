@@ -1,4 +1,4 @@
-namespace HokemonChallenge {
+namespace HokemonChallenge.ProgramStates {
     
     public class PokeBattle {
 

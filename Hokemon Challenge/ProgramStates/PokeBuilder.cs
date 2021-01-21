@@ -1,7 +1,7 @@
 using HokemonChallenge.Cache;
 using HokemonChallenge.Util;
 
-namespace HokemonChallenge {
+namespace HokemonChallenge.ProgramStates {
     /**
      * Creates a Pokemon and adds it to the Cache
      */
