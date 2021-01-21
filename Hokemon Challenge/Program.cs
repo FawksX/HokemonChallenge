@@ -1,5 +1,6 @@
 ﻿
 using HokemonChallenge.Cache;
+using HokemonChallenge.Config;
 using HokemonChallenge.ProgramStates;
 using HokemonChallenge.Util;
 
@@ -12,10 +13,7 @@ namespace HokemonChallenge {
                 MessageUtil.MsgSpacer();
                 MessageUtil.Msg("MAIN MENU");
                 MessageUtil.MsgSpacer();
-                MessageUtil.Msg("Type create to create a Pokemon");
-                MessageUtil.Msg("Type battle to battle two pokemon");
-                MessageUtil.Msg("Type exit to exit the program");
-                MessageUtil.Msg("");
+                MessageUtil.Msg(Messages.main_menu);
                 string answer = (string) MessageUtil.getInput("Select: ");
 
                 if (answer.ToLower().Equals("pokemon")) {
@@ -24,7 +22,7 @@ namespace HokemonChallenge {
 
                 if (answer.ToLower().Equals("battle")) {
                     if (PokeCache.get().Count < 2) {
-                        MessageUtil.Msg("ERROR : You need atleast two pokemon in order to battle!");
+                        MessageUtil.Msg(Messages.battle_start_error);
                         continue;
                     }
                     PokeBattle.open();
