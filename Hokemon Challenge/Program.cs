@@ -6,8 +6,7 @@ namespace HokemonChallenge {
         public static void Main(string[] args) {
 
             while (true) {
-                string keepMaking = MessageUtil.getInput("Do you want to continue making pokemon? (yes/no): ")
-                    .ToString();
+                string keepMaking = MessageUtil.getInput("Do you want to continue making pokemon? (yes/no): ").ToString();
                 if (keepMaking.ToLower().Equals("yes")) {
                     Pokemon.Pokemon newPoke = PokeUtil.CreatePokemon();
 
