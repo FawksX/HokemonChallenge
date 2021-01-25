@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace HokemonChallenge.Pokemon.Impl {
@@ -12,7 +13,7 @@ namespace HokemonChallenge.Pokemon.Impl {
         private int cp;
         private EPokemonRarity rarity;
         private EPokemonTeams team;
-
+        private int health = new Random().Next(90, 120);
         public AbstractPokemon(string name, 
             EPokemonTypes type, 
             int cp, 
@@ -91,6 +92,14 @@ namespace HokemonChallenge.Pokemon.Impl {
         
         public Dictionary<PokeStats, int> GetEVRaw() {
             return ev;
+        }
+
+        public int GetHealth() {
+            return health;
+        }
+
+        public void SetHealth(int health) {
+            this.health = health;
         }
         
     }

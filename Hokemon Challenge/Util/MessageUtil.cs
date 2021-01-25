@@ -31,6 +31,7 @@ namespace HokemonChallenge.Util {
                 Console.Write(c);
                 System.Threading.Thread.Sleep(60);
             }
+            MessageUtil.Msg("");
         }
 
         public static void TypewriterMsg(string message, params string[] args) {

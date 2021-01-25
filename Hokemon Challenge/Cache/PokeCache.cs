@@ -18,8 +18,12 @@ namespace HokemonChallenge.Cache {
             return _POKEMON.ContainsKey(name);
         }
 
-        public static Dictionary<string, Pokemon.Pokemon> get() {
+        public static Dictionary<string, Pokemon.Pokemon> getAll() {
             return _POKEMON;
+        }
+
+        public static Pokemon.Pokemon get(string name) {
+            return _POKEMON[name];
         }
         
 

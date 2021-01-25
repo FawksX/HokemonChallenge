@@ -104,5 +104,22 @@ namespace HokemonChallenge.Util {
             MessageUtil.Msg("Special Defense: " + stat[PokeStats.SpecialDefense]);
         }
         
+        /**
+         * This is a slightly edited version of the Pokemon Damage Calculation
+         * It is ( ( (Special (Attack or defense) / 5) + 2) * Health ) / 50 ) * (defense or attack)
+         */
+        public static int calculateValue(Pokemon.Pokemon pokemon, PokeStats defenseOrAttack) {
+            PokeStats special = PokeStats.SpecialDefense;
+
+            if (defenseOrAttack == PokeStats.Attack) {
+                special = PokeStats.SpecialAttack;
+            }
+
+            int calculation = ((((pokemon.GetEV(special) / 5) + 2) * pokemon.GetHealth()) / 50) *
+                pokemon.GetEV(defenseOrAttack) / 10;
+
+            return calculation;
+        }
+        
     }
 }
