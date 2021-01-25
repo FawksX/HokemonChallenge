@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using HokemonChallenge.Cache;
 using HokemonChallenge.Config;
 using HokemonChallenge.Pokemon.Impl;

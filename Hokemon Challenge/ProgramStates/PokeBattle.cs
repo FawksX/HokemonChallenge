@@ -1,4 +1,3 @@
-using System;
 using HokemonChallenge.Cache;
 using HokemonChallenge.Pokemon.Impl;
 using HokemonChallenge.Util;

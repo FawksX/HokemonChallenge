@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace HokemonChallenge.Cache {
     public class PokeCache {

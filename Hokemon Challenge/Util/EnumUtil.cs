@@ -1,5 +1,4 @@
 using System;
-using HokemonChallenge.Pokemon.Impl;
 
 namespace HokemonChallenge.Util {
     public static class EnumUtil {
